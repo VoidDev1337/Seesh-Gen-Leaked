@@ -104,7 +104,7 @@ class Generator:
 
         self.username = Utils.randomc(4) + random.choice([' | .gg/spacemembers'])
         self.fingerprint = self.session.headers["X-Fingerprint"]
-        self.captcha = AiSolver.hCaptcha('4c672d35-0701-42b2-88c3-78380b0db560', 'https://discord.com/')#Solvers.hCaptcha('4c672d35-0701-42b2-88c3-78380b0db560', 'https://discord.com/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0')#
+        self.captcha = Solvers.hCaptcha('4c672d35-0701-42b2-88c3-78380b0db560', 'https://discord.com/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0')#
         if self.captcha.startswith('P0_'):
             solved += 1
             win32console.SetConsoleTitle(f'Space Generator | Genned : {generated} | Solved : {solved} | Failed : {failed} | Speed {round(generated / ((time() - genstated) / 60))}/min')
